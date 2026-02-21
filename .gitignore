@@ -1,46 +1,20 @@
-# =========================
-# Python cache
-# =========================
-__pycache__/
-*.py[cod]
-
-# =========================
-# Virtual Environment
-# =========================
+# virtual environment
 venv/
 .env/
-.venv/
 
-# =========================
-# ML Models / Artifacts
-# =========================
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# model files
 *.pkl
-*.joblib
+outputs/*.png
 
-# =========================
-# Data files (keep only if needed)
-# =========================
-*.csv
-*.xlsx
-
-# =========================
-# Jupyter / Experiments
-# =========================
-.ipynb_checkpoints/
-
-# =========================
-# OS files
-# =========================
+# system files
 .DS_Store
 Thumbs.db
 
-# =========================
-# IDEs
-# =========================
+# editor configs
 .vscode/
 .idea/
-
-# =========================
-# Logs
-# =========================
-*.log

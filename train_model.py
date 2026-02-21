@@ -24,7 +24,7 @@ print("=" * 60)
 print("\n📁 Step 1: Loading and exploring dataset...")
 
 # Load the dataset
-df = pd.read_csv('Crop_recommendation.csv')
+df = pd.read_csv('data/Crop_recommendation.csv')
 
 # Basic dataset information
 print(f"✅ Dataset loaded successfully!")
@@ -49,7 +49,7 @@ correlation_matrix = df.drop('label', axis=1).corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
 plt.title('Feature Correlation Heatmap')
 plt.tight_layout()
-plt.savefig('correlation_heatmap.png', dpi=300, bbox_inches='tight')
+plt.savefig('outputs/correlation_heatmap.png', dpi=300, bbox_inches='tight')
 plt.close()
 print("📊 Correlation heatmap saved as 'correlation_heatmap.png'")
 
@@ -157,7 +157,7 @@ plt.ylabel('Actual')
 plt.xticks(rotation=45)
 plt.yticks(rotation=0)
 plt.tight_layout()
-plt.savefig('confusion_matrix.png', dpi=300, bbox_inches='tight')
+plt.savefig('outputs/confusion_matrix.png', dpi=300, bbox_inches='tight')
 plt.close()
 print("📊 Confusion matrix saved as 'confusion_matrix.png'")
 
@@ -172,7 +172,7 @@ sns.barplot(data=feature_importance, x='importance', y='feature', palette='virid
 plt.title('Feature Importance - Random Forest')
 plt.xlabel('Importance Score')
 plt.tight_layout()
-plt.savefig('feature_importance.png', dpi=300, bbox_inches='tight')
+plt.savefig('outputs/feature_importance.png', dpi=300, bbox_inches='tight')
 plt.close()
 print("📊 Feature importance chart saved as 'feature_importance.png'")
 
@@ -187,11 +187,11 @@ for idx, row in feature_importance.iterrows():
 print("\n💾 Step 6: Saving model and encoder...")
 
 # Save the trained model
-joblib.dump(rf_model, 'rf_crop_model.pkl')
+joblib.dump(rf_model, 'outputs/rf_crop_model.pkl')
 print("✅ Model saved as 'rf_crop_model.pkl'")
 
 # Save the label encoder
-joblib.dump(label_encoder, 'label_encoder.pkl')
+joblib.dump(label_encoder, 'outputs/label_encoder.pkl')
 print("✅ Label encoder saved as 'label_encoder.pkl'")
 
 # ===================================================================

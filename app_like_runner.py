@@ -108,7 +108,11 @@ def main():
     
     # Get predictions with probabilities
     try:
-        probabilities = model.predict_proba([features])[0]
+        # Create DataFrame with proper feature names to avoid warning
+        import pandas as pd
+        feature_names = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
+        features_df = pd.DataFrame([features], columns=feature_names)
+        probabilities = model.predict_proba(features_df)[0]
         
         # Get crop names from label encoder
         crop_names = label_encoder.classes_
