@@ -66,13 +66,6 @@ smart-crop-recommendation
 data  
 Crop_recommendation.csv  
 
-outputs  
-confusion_matrix.png  
-correlation_heatmap.png  
-feature_importance.png
-rf_crop_model.pkl  
-label_encoder.pkl  
-
 train_model.py  
 farmer_input_mapper.py  
 app_like_runner.py  
@@ -81,7 +74,6 @@ frontend
 index.html  
 styles.css  
 app.js  
-
 
 requirements.txt  
 README.md  
